@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | LGPD Healthcare Protocol</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#0c1324",
+                      "primary-container": "#00f0ff",
+                      "surface-variant": "#2e3447",
+                      "surface-container-lowest": "#070d1f",
+                      "on-secondary": "#20304e",
+                      "surface-tint": "#00dbe9",
+                      "primary-fixed": "#7df4ff",
+                      "surface-container": "#191f31",
+                      "inverse-surface": "#dce1fb",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-secondary-fixed-variant": "#374765",
+                      "outline-variant": "#3b494b",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed": "#002022",
+                      "void-black": "#020617",
+                      "tertiary-container": "#d1d9f3",
+                      "on-tertiary-fixed": "#131b2e",
+                      "inverse-primary": "#006970",
+                      "tertiary": "#f5f5ff",
+                      "primary": "#dbfcff",
+                      "on-primary-container": "#006970",
+                      "secondary-container": "#394968",
+                      "on-primary-fixed-variant": "#004f54",
+                      "outline": "#849495",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "secondary-fixed": "#d7e2ff",
+                      "secondary": "#b6c7eb",
+                      "secondary-fixed-dim": "#b6c7eb",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#081b38",
+                      "tertiary-fixed": "#dae2fd",
+                      "cyan-tech": "#00F0FF",
+                      "surface-container-low": "#151b2d",
+                      "surface-container-highest": "#2e3447",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-container": "#575e75",
+                      "on-primary": "#00363a",
+                      "surface-bright": "#33394c",
+                      "surface-dim": "#0c1324",
+                      "security-blue": "#3B82F6",
+                      "deep-graphite": "#1E293B",
+                      "on-surface-variant": "#b9cacb",
+                      "on-surface": "#dce1fb",
+                      "on-background": "#dce1fb",
+                      "background": "#0c1324",
+                      "on-secondary-container": "#a8b9dd",
+                      "surface-container-high": "#23293c",
+                      "primary-fixed-dim": "#00dbe9",
+                      "error-container": "#93000a",
+                      "glass-stroke": "rgba(255, 255, 255, 0.12)",
+                      "on-tertiary": "#283044",
+                      "inverse-on-surface": "#2a3043"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "container-max": "1200px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px",
+                      "section-gap": "80px",
+                      "margin-desktop": "64px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-lg": ["Outfit"],
+                      "body-md": ["Inter"],
+                      "headline-xl": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "headline-md": ["Outfit"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #020617;
+            color: #dce1fb;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(12, 19, 36, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .etched-divider {
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+        .scan-line {
+            height: 2px;
+            background: #00F0FF;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md">
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <span class="material-symbols-outlined text-cyan-tech">security</span>
+            <span class="nav-label-brand">LGPD SAÚDE</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="direitos.html" class="nav-link">Direitos</a>
+            <a href="glossario.html" class="nav-link">Glossário</a>
+            <a href="recursos.html" class="nav-link">Recursos</a>
+            <a href="faq.html" class="nav-link active">FAQ</a>
+            <a href="contato.html" class="nav-link">Contato</a>
+            <a href="sobre.html" class="nav-link">Sobre</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 z-[100] w-3/4 max-w-sm translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full p-6">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-headline-md text-cyan-tech font-bold uppercase tracking-widest">Menu</span>
+            <button id="close-menu-btn" class="text-cyan-tech bg-transparent border-none cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="index.html" class="mobile-nav-link">Início</a>
+            <a href="direitos.html" class="mobile-nav-link">Direitos</a>
+            <a href="glossario.html" class="mobile-nav-link">Glossário</a>
+            <a href="recursos.html" class="mobile-nav-link">Recursos</a>
+            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            <a href="contato.html" class="mobile-nav-link">Contato</a>
+            <a href="sobre.html" class="mobile-nav-link">Sobre</a>
+        </nav>
+    </div>
+</div>
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-void-black/80 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+    <main class="py-section-gap px-margin-mobile">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-stack-lg">
+                <span class="font-label-caps text-cyan-tech mb-stack-sm block">DÚVIDAS FREQUENTES</span>
+                <h1 class="font-headline-xl text-primary uppercase">FAQ LGPD SAÚDE</h1>
+                <p class="font-body-lg text-on-surface-variant mt-4">Respostas diretas para as principais dúvidas sobre proteção de dados no setor de saúde.</p>
+            </div>
+
+            <div class="space-y-gutter">
+                <!-- GERAL -->
+                <div class="space-y-stack-md">
+                    <h2 class="font-headline-md text-cyan-tech border-b border-glass-stroke pb-2 uppercase tracking-wider">Geral</h2>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O que é a LGPD?</h3>
+                        <p class="text-on-surface-variant font-body-md">A Lei Geral de Proteção de Dados (LGPD) é a legislação brasileira que estabelece regras sobre coleta, uso, armazenamento e compartilhamento de dados pessoais, buscando proteger a privacidade e garantir maior controle das pessoas sobre suas informações.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">A LGPD protege apenas dados na internet?</h3>
+                        <p class="text-on-surface-variant font-body-md">Não. A LGPD protege dados em meios físicos e digitais. Prontuários, fichas impressas, documentos e sistemas eletrônicos podem ser abrangidos pela lei.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O que são dados pessoais?</h3>
+                        <p class="text-on-surface-variant font-body-md">Dados pessoais são informações capazes de identificar uma pessoa, direta ou indiretamente, como nome, CPF, telefone, endereço e e-mail.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O que são dados sensíveis?</h3>
+                        <p class="text-on-surface-variant font-body-md">São informações que exigem proteção reforçada, como dados de saúde, exames médicos, religião, biometria, origem racial e informações genéticas.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Hospitais precisam seguir a LGPD?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. Hospitais, clínicas, laboratórios, farmácias e qualquer instituição que utilize dados pessoais precisam seguir a legislação.</p>
+                    </div>
+                </div>
+
+                <!-- DIREITOS -->
+                <div class="space-y-stack-md">
+                    <h2 class="font-headline-md text-cyan-tech border-b border-glass-stroke pb-2 uppercase tracking-wider">Direitos</h2>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Quais direitos a LGPD me garante?</h3>
+                        <p class="text-on-surface-variant font-body-md">Você possui direitos como confirmação de tratamento, acesso aos dados, correção, anonimização, eliminação, portabilidade e informação sobre compartilhamentos.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Posso pedir correção dos meus dados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. Caso existam informações incorretas ou desatualizadas, você pode solicitar correção diretamente à instituição.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Posso pedir exclusão dos meus dados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Em alguns casos sim. Existem situações em que a lei exige armazenamento obrigatório.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Posso saber quem acessou meus dados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Você pode solicitar informações sobre compartilhamentos e uso realizado pela instituição.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Hospitais podem compartilhar meus dados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Somente em hipóteses previstas em lei ou quando houver base legal adequada.</p>
+                    </div>
+                </div>
+
+                <!-- INCIDENTES -->
+                <div class="space-y-stack-md">
+                    <h2 class="font-headline-md text-cyan-tech border-b border-glass-stroke pb-2 uppercase tracking-wider">Incidentes</h2>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O que fazer se meus dados forem vazados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Registre provas, solicite informações à instituição e acompanhe movimentações suspeitas.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O hospital precisa avisar sobre vazamentos?</h3>
+                        <p class="text-on-surface-variant font-body-md">Em determinadas situações, sim. Incidentes relevantes devem ser comunicados.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Quais riscos existem após um vazamento?</h3>
+                        <p class="text-on-surface-variant font-body-md">Golpes, uso indevido de identidade, exposição de diagnósticos e fraudes.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Posso denunciar um vazamento?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. Você pode registrar reclamações junto à instituição e aos canais oficiais.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Vazamento de prontuário é grave?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. Dados médicos são considerados sensíveis e possuem proteção reforçada.</p>
+                    </div>
+                </div>
+
+                <!-- DPO -->
+                <div class="space-y-stack-md">
+                    <h2 class="font-headline-md text-cyan-tech border-b border-glass-stroke pb-2 uppercase tracking-wider">DPO</h2>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O que é um DPO?</h3>
+                        <p class="text-on-surface-variant font-body-md">É o profissional responsável pela comunicação sobre tratamento de dados.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">DPO significa Encarregado de Dados?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. Os termos possuem o mesmo significado.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Hospitais precisam ter DPO?</h3>
+                        <p class="text-on-surface-variant font-body-md">Dependendo da estrutura e atividade desenvolvida, pode existir essa necessidade.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">Posso falar diretamente com o DPO?</h3>
+                        <p class="text-on-surface-variant font-body-md">Sim. O encarregado atua como canal entre cidadão e instituição.</p>
+                    </div>
+                    <div class="glass-card p-stack-md rounded-xl">
+                        <h3 class="font-headline-md text-primary mb-2 text-lg">O DPO resolve vazamentos?</h3>
+                        <p class="text-on-surface-variant font-body-md">Ele participa da gestão e comunicação, mas a responsabilidade é institucional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- Decorative Visual -->
+<div class="mt-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="relative h-64 md:h-96 rounded-2xl overflow-hidden glass-card">
+        <img class="w-full h-full object-cover opacity-40 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7uPSo6Lv5dOQFv-Y2fN_4wM9__Ejs7utfRZbRKtZUpOTflAOUYSPU6HS62MAEeNXL8mivn28WXQFDuJY9HtltnCP70NzhB02sPfbAFFPa5ieWUDA4xcjNjEo7mF9ZnRIvLeOUQsodfEO76g3Se49tOyeaawAbECBqgbOTm_toV16pqrqxX2XVsF63LjjqdOK5u03y8QBOM5gJIgT7lLuW1ULqcY3d9gDVS7N537zuWtWOxEKrlYp4-xto7b5gsWswMyPaQYslfoc"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent"></div>
+    </div>
+</div>
+</main>
+<!-- Footer from JSON Logic -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h2 class="footer-main-title">CARTILHA DIGITAL</h2>
+                    
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="user-circle"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">PROFESSOR ORIENTADOR</span>
+                            <p class="entry-value">Luiz Roberto Carboni Souza</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">ALUNOS</span>
+                            <p class="entry-value">Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-right">
+                    <div class="promoted-wrapper">
+                        <span class="promoted-label">PROMOVIDO POR</span>
+                        <div class="logo-container">
+                            <img src="../imagens lgpd/Logomarca Faculdade.png" alt="Faculdade Galileu" class="footer-university-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LGPD na Área da Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body></html>

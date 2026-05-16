@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção de Dados em Saúde | LGPD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Stitch Integration: Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#20304e",
+                    "primary": "#dbfcff",
+                    "outline-variant": "#3b494b",
+                    "secondary-fixed-dim": "#b6c7eb",
+                    "on-surface": "#dce1fb",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#575e75",
+                    "inverse-on-surface": "#2a3043",
+                    "surface-variant": "#2e3447",
+                    "on-primary": "#00363a",
+                    "void-black": "#020617",
+                    "on-tertiary-fixed": "#131b2e",
+                    "surface": "#0c1324",
+                    "surface-container-highest": "#2e3447",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#070d1f",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-tertiary": "#283044",
+                    "surface-tint": "#00dbe9",
+                    "on-surface-variant": "#b9cacb",
+                    "on-secondary-container": "#a8b9dd",
+                    "background": "#0c1324",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#dae2fd",
+                    "secondary-fixed": "#d7e2ff",
+                    "surface-bright": "#33394c",
+                    "surface-container": "#191f31",
+                    "on-primary-container": "#006970",
+                    "security-blue": "#3B82F6",
+                    "secondary-container": "#394968",
+                    "surface-container-high": "#23293c",
+                    "inverse-surface": "#dce1fb",
+                    "secondary": "#b6c7eb",
+                    "outline": "#849495",
+                    "inverse-primary": "#006970",
+                    "tertiary": "#f5f5ff",
+                    "on-secondary-fixed-variant": "#374765",
+                    "surface-container-low": "#151b2d",
+                    "cyan-tech": "#00F0FF",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-dim": "#0c1324",
+                    "deep-graphite": "#1E293B",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#dce1fb",
+                    "primary-fixed-dim": "#00dbe9",
+                    "primary-container": "#00f0ff",
+                    "on-secondary-fixed": "#081b38",
+                    "tertiary-container": "#d1d9f3",
+                    "primary-fixed": "#7df4ff",
+                    "glass-stroke": "rgba(255, 255, 255, 0.12)",
+                    "on-primary-fixed": "#002022"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "container-max": "1200px",
+                    "section-gap": "80px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "caption": ["Inter"],
+                    "headline-xl": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .etched-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #00F0FF 0%, #00dbe9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Stitch context wrapper to avoid affecting existing styles */
+        .stitch-context {
+            font-family: 'Inter', sans-serif;
+            color: #dce1fb;
+            background-color: #0c1324;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="ambient-canvas"></canvas>
+    <div class="ambient-glow"></div>
+    
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="material-symbols-outlined text-cyan-tech">security</span>
+                <span class="nav-label-brand">LGPD SAÚDE</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Início</a>
+                <a href="direitos.html" class="nav-link">Direitos</a>
+                <a href="glossario.html" class="nav-link">Glossário</a>
+                <a href="recursos.html" class="nav-link">Recursos</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+                <a href="sobre.html" class="nav-link">Sobre</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 z-[100] w-3/4 max-w-sm translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex justify-between items-center mb-10">
+                <span class="font-headline-md text-cyan-tech font-bold uppercase tracking-widest">Menu</span>
+                <button id="close-menu-btn" class="text-cyan-tech bg-transparent border-none cursor-pointer">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-2">
+                <a href="index.html" class="mobile-nav-link">Início</a>
+                <a href="direitos.html" class="mobile-nav-link">Direitos</a>
+                <a href="glossario.html" class="mobile-nav-link">Glossário</a>
+                <a href="recursos.html" class="mobile-nav-link">Recursos</a>
+                <a href="faq.html" class="mobile-nav-link">FAQ</a>
+                <a href="contato.html" class="mobile-nav-link">Contato</a>
+                <a href="sobre.html" class="mobile-nav-link">Sobre</a>
+            </nav>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-void-black/80 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <main class="hero-section">
+        <div class="hero-bg">
+            <img id="shield-animation" src="../imagens lgpd/imagem.jpeg" alt="LGPD Shield Animation">
+            <div class="hero-overlay-global"></div>
+            <div class="hero-overlay-left"></div>
+        </div>
+
+        <div class="container hero-grid">
+            
+            <div class="hero-content">
+                <h1 class="headline">
+                    Saiba como proteger<br>os seus dados.
+                </h1>
+                
+                <p class="subheadline">
+                    Entenda quais dados são protegidos pela LGPD e como a privacidade funciona na área da saúde.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="guia.html" class="btn-primary">
+                        Meus Dados Vazaram. E agora?
+                    </a>
+                    <a href="saibamais.html" class="btn-secondary">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Empty right column to keep the 40/60 layout proportion -->
+            <div class="hero-visual-empty"></div>
+            
+        </div>
+    </main>
+
+    <!-- Stitch Integration: Índice Interativo -->
+    <div class="stitch-context">
+        <div class="etched-divider"></div>
+        <!-- SECTION ÍNDICE -->
+        <section class="py-section-gap">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center mb-stack-lg">
+                    <span class="font-label-caps text-cyan-tech mb-stack-sm block">CARTILHA DIGITAL</span>
+                    <h2 class="font-headline-xl text-headline-xl text-primary uppercase">Índice</h2>
+                    <h3 class="font-headline-md text-headline-md text-primary-fixed mt-stack-md">O que é Considerado Dados Sensíveis</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mt-4">Todas as informações pessoais, desde CPF, endereço, até alguma informação que lhe possa causar danos morais, como um vexame.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-stretch justify-center gap-gutter max-w-6xl mx-auto">
+                    <!-- Left: Existing Card -->
+                    <div class="group p-stack-lg border border-cyan-tech/30 bg-cyan-tech/5 rounded-xl transition-all duration-400 w-full md:w-[480px] flex flex-col justify-center">
+                        <span class="material-symbols-outlined text-error text-4xl mb-stack-md">warning</span>
+                        <h4 class="font-headline-md text-headline-md text-primary mb-stack-md">Situação de Vexame</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Exemplo de exposição de informações médicas, diagnósticos ou situações pessoais que possam causar constrangimento público ao paciente.
+                                </p>
+                    </div>
+                    
+                    <!-- Right: Illustration -->
+                    <div class="w-full md:w-[480px] rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                        <img src="../imagens lgpd/Vexame.png" alt="Ilustração Situação de Vexame" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMATION BLOCKS -->
+        <section class="py-section-gap bg-surface-container-low">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="glass-panel p-stack-lg rounded-xl">
+                    <h4 class="font-headline-md text-headline-md text-cyan-tech mb-stack-md">O que é a LGPD?</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">LGPD é a Lei n° 13.709/2018. Ela tem como objetivo garantir transparência, segurança e consentimento no uso de dados pessoais em meios físicos e digitais.</p>
+                </div>
+                <div class="glass-panel p-stack-lg rounded-xl">
+                    <h4 class="font-headline-md text-headline-md text-cyan-tech mb-stack-md">Qual a relação da LGPD com a área da saúde?</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Dados médicos são considerados dados sensíveis e o tratamento dessas informações exige rigor extremo devido ao risco de discriminação e danos morais ao paciente em caso de vazamento.</p>
+                </div>
+                <div class="glass-panel p-stack-lg rounded-xl flex flex-col h-full">
+                    <h4 class="font-headline-md text-headline-md text-cyan-tech mb-stack-md">Quais são os direitos dos pacientes?</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">A LGPD garante direito de acesso, controle, bloqueio ou exclusão de dados, além de portabilidade do histórico médico. Para saber mais, continue lendo a cartilha digital.</p>
+                    <a href="direitos.html" class="mt-stack-md text-cyan-tech font-label-caps hover:underline">Ver Todos os Direitos →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PASSO A PASSO -->
+        <section class="py-section-gap bg-void-black">
+            <div class="max-w-3xl mx-auto px-margin-mobile">
+                <div class="text-center mb-stack-lg">
+                    <span class="font-label-caps text-cyan-tech mb-stack-sm block">PROTOCOLO DE INCIDENTE</span>
+                    <h2 class="font-headline-xl text-headline-xl text-primary">Passo a Passo do que fazer quando seus dados forem vazados</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="glass-panel p-stack-md rounded-lg flex items-center gap-6 border-l-4 border-l-cyan-tech">
+                        <span class="font-headline-xl text-4xl step-number font-bold">01</span>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-primary">Procure a Instituição</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Entre em contato direto com o hospital ou clínica responsável.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-stack-md rounded-lg flex items-center gap-6 border-l-4 border-l-cyan-tech">
+                        <span class="font-headline-xl text-4xl step-number font-bold">02</span>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-primary">Peça Informações</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Exija saber a extensão do vazamento e quais dados foram comprometidos.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-stack-md rounded-lg flex items-center gap-6 border-l-4 border-l-cyan-tech">
+                        <span class="font-headline-xl text-4xl step-number font-bold">03</span>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-primary">Guarde Provas</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Print de telas, protocolos, e-mails e qualquer evidência do ocorrido.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-stack-md rounded-lg flex items-center gap-6 border-l-4 border-l-cyan-tech">
+                        <span class="font-headline-xl text-4xl step-number font-bold">04</span>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-primary">Registre uma Reclamação</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Utilize canais oficiais como ANPD, PROCON ou plataformas de defesa.</p>
+                            <a href="https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular#denuncia" class="text-cyan-tech font-label-caps hover:underline">Canais de Denúncia →</a>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-stack-md rounded-lg flex items-center gap-6 border-l-4 border-l-cyan-tech">
+                        <span class="font-headline-xl text-4xl step-number font-bold">05</span>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-primary">Acompanhe e Cobre</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Monitore o andamento da sua solicitação e exija prazos claros de resposta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION O QUE NÃO FAZER -->
+        <section class="py-section-gap bg-surface-container-low">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="mb-stack-lg">
+                    <span class="font-label-caps text-error mb-stack-sm block">CUIDADOS ESSENCIAIS</span>
+                    <h2 class="font-headline-xl text-headline-xl text-primary">O que não fazer quando seus Dados Forem Vazados</h2>
+                </div>
+                <div class="glass-panel p-stack-lg rounded-xl border-l-4 border-l-error">
+                    <ul class="space-y-stack-md text-on-surface-variant font-body-lg text-body-lg">
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-error">cancel</span>
+                            <span>Registrar uma reclamação e abandonar, sem acompanhar e cobrar.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-error">cancel</span>
+                            <span>Achar que reclamar não vai resolver e deixar de fazer a denúncia.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-error">cancel</span>
+                            <span>Aceitar vários adiamentos por parte do hospital ao questionar o ocorrido.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-error">cancel</span>
+                            <span>Conversar com o hospital por telefone sem gravar a ligação.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-error">cancel</span>
+                            <span>Ignorar provas, mensagens, protocolos ou documentos importantes.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-stack-lg pt-stack-md border-t border-glass-stroke">
+                        <p class="font-body-md text-body-md text-error/80 italic">Entre outras situações que podem prejudicar sua defesa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP & FAQ SECTIONS -->
+        <section class="py-section-gap bg-void-black">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <!-- Ajuda Reclamação -->
+                <div class="glass-panel p-stack-lg rounded-xl flex flex-col">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Precisa de Ajuda para fazer a sua reclamação?</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Não se preocupe, adicionamos um link com uma explicação passo a passo no YouTube.</p>
+                    
+                    <div class="mb-stack-lg">
+                        <iframe class="w-full aspect-video rounded-xl shadow-2xl border border-glass-stroke" src="https://www.youtube.com/embed/yQQXsHr0d8I?si=z1h6rYtxAiexrbvD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <a class="bg-cyan-tech text-on-primary px-stack-lg py-3 rounded-lg font-label-caps text-center hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all inline-flex items-center justify-center gap-2" href="https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular#denuncia" target="_blank">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        Acesse o Portal GOV.BR
+                    </a>
+                </div>
+                <!-- Dúvidas Comuns -->
+                <div class="glass-panel p-stack-lg rounded-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Dúvidas Comuns</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">As respostas são simples e diretas. Acesse nossa central de perguntas frequentes.</p>
+                    </div>
+                    <a class="border border-cyan-tech text-cyan-tech px-stack-lg py-3 rounded-lg font-label-caps text-center hover:bg-cyan-tech/10 transition-all inline-flex items-center justify-center gap-2" href="faq.html">
+                        <span class="material-symbols-outlined">quiz</span>
+                                Clique aqui para ser redirecionado ao FAQ
+                            </a>
+                </div>
+            </div>
+        </section>
+        <div class="etched-divider"></div>
+    </div>
+
+    <!-- Institutional Footer -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h2 class="footer-main-title">CARTILHA DIGITAL</h2>
+                    
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="user-circle"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">PROFESSOR ORIENTADOR</span>
+                            <p class="entry-value">Luiz Roberto Carboni Souza</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">ALUNOS</span>
+                            <p class="entry-value">Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-right">
+                    <div class="promoted-wrapper">
+                        <span class="promoted-label">PROMOVIDO POR</span>
+                        <div class="logo-container">
+                            <img src="../imagens lgpd/Logomarca Faculdade.png" alt="Faculdade Galileu" class="footer-university-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LGPD na Área da Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body></html>

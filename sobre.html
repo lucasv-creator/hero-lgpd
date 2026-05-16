@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sobre o Projeto | LGPD Healthcare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#b6c7eb",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-variant": "#2e3447",
+                    "inverse-on-surface": "#2a3043",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#3b494b",
+                    "primary": "#dbfcff",
+                    "on-secondary-container": "#a8b9dd",
+                    "on-primary-fixed-variant": "#004f54",
+                    "void-black": "#020617",
+                    "background": "#0c1324",
+                    "surface": "#0c1324",
+                    "on-surface-variant": "#b9cacb",
+                    "secondary-fixed": "#d7e2ff",
+                    "cyan-tech": "#00F0FF",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-container": "#191f31",
+                    "glass-stroke": "rgba(255, 255, 255, 0.12)",
+                    "surface-container-lowest": "#070d1f",
+                    "surface-container-high": "#23293c",
+                    "primary-fixed": "#7df4ff",
+                    "on-secondary": "#20304e",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "deep-graphite": "#1E293B",
+                    "security-blue": "#3B82F6",
+                    "surface-container-low": "#151b2d",
+                    "on-background": "#dce1fb",
+                    "inverse-primary": "#006970",
+                    "surface-dim": "#0c1324",
+                    "on-primary": "#00363a",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#d1d9f3",
+                    "surface-tint": "#00dbe9",
+                    "on-tertiary": "#283044",
+                    "surface-bright": "#33394c",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#00dbe9",
+                    "primary-container": "#00f0ff",
+                    "on-secondary-fixed-variant": "#374765",
+                    "outline": "#849495",
+                    "on-surface": "#dce1fb",
+                    "on-tertiary-container": "#575e75",
+                    "inverse-surface": "#dce1fb",
+                    "on-primary-container": "#006970",
+                    "on-secondary-fixed": "#081b38",
+                    "on-primary-fixed": "#002022",
+                    "secondary-container": "#394968",
+                    "on-tertiary-fixed": "#131b2e",
+                    "surface-container-highest": "#2e3447",
+                    "error-container": "#93000a",
+                    "tertiary": "#f5f5ff",
+                    "secondary-fixed-dim": "#b6c7eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "section-gap": "80px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Outfit"],
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "headline-lg": ["Outfit"],
+                    "headline-xl": ["Outfit"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(25, 31, 49, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .etched-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+        .tech-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 240, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-void-black text-on-surface selection:bg-cyan-tech selection:text-void-black">
+<!-- TopAppBar -->
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <span class="material-symbols-outlined text-cyan-tech">security</span>
+            <span class="nav-label-brand">LGPD SAÚDE</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="direitos.html" class="nav-link">Direitos</a>
+            <a href="glossario.html" class="nav-link">Glossário</a>
+            <a href="recursos.html" class="nav-link">Recursos</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="contato.html" class="nav-link">Contato</a>
+            <a href="sobre.html" class="nav-link active">Sobre</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 z-[100] w-3/4 max-w-sm translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full p-6">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-headline-md text-cyan-tech font-bold uppercase tracking-widest">Menu</span>
+            <button id="close-menu-btn" class="text-cyan-tech bg-transparent border-none cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="index.html" class="mobile-nav-link">Início</a>
+            <a href="direitos.html" class="mobile-nav-link">Direitos</a>
+            <a href="glossario.html" class="mobile-nav-link">Glossário</a>
+            <a href="recursos.html" class="mobile-nav-link">Recursos</a>
+            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            <a href="contato.html" class="mobile-nav-link">Contato</a>
+            <a href="sobre.html" class="mobile-nav-link">Sobre</a>
+        </nav>
+    </div>
+</div>
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-void-black/80 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden min-h-[50vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop tech-grid">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-void-black/50 to-void-black pointer-events-none"></div>
+<div class="relative z-10 max-w-container-max mx-auto w-full">
+<div class="inline-block px-stack-md py-stack-sm glass-card border-cyan-tech/30 mb-stack-md rounded-full">
+<span class="font-label-caps text-label-caps text-cyan-tech">PROJETO ACADÊMICO</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-white mb-stack-md md:w-2/3">SOBRE O PROJETO</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant md:w-1/2 leading-relaxed">
+                    Iniciativa acadêmica da <span class="text-cyan-tech font-bold">Faculdade Galileu</span> para a proteção de dados na saúde, estabelecendo novos padrões de transparência e segurança jurídica.
+                </p>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-cyan-tech/10 rounded-full blur-3xl bg-cyan-tech/5 pointer-events-none"></div>
+</section>
+<!-- Mission Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-container-max mx-auto">
+<div class="glass-card p-stack-lg md:p-12 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+<span class="material-symbols-outlined text-[120px] text-cyan-tech">verified_user</span>
+</div>
+<div class="flex flex-col md:flex-row items-start gap-stack-lg relative z-10">
+<div class="p-stack-md bg-cyan-tech/10 rounded-xl">
+<span class="material-symbols-outlined text-cyan-tech text-4xl" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-sm">Nossa Missão</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                                Capacitar pacientes sobre seus direitos digitais em um cenário de crescente digitalização da saúde. Buscamos traduzir a complexidade da <span class="text-white font-medium">LGPD</span> em orientações práticas e acessíveis para o cotidiano institucional.
+                            </p>
+</div>
+</div>
+<div class="mt-stack-lg etched-divider"></div>
+<div class="mt-stack-md flex gap-gutter overflow-x-auto pb-4">
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-cyan-tech shadow-[0_0_8px_#00f0ff]"></span>
+<span class="font-label-caps text-label-caps text-on-surface">INTEGRIDADE</span>
+</div>
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-cyan-tech shadow-[0_0_8px_#00f0ff]"></span>
+<span class="font-label-caps text-label-caps text-on-surface">ÉTICA DIGITAL</span>
+</div>
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-cyan-tech shadow-[0_0_8px_#00f0ff]"></span>
+<span class="font-label-caps text-label-caps text-on-surface">COMPLIANCE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Team Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-container-max mx-auto">
+<div class="flex items-end justify-between mb-section-gap">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-sm uppercase tracking-wider">Corpo Docente e Discente</h2>
+<div class="w-20 h-1 bg-cyan-tech"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Coordinator Card -->
+<div class="md:col-span-5">
+<div class="glass-card p-stack-lg rounded-xl h-full border-l-4 border-l-cyan-tech relative overflow-hidden">
+<div class="mb-stack-lg">
+<span class="font-label-caps text-label-caps text-cyan-tech bg-cyan-tech/10 px-stack-sm py-1 rounded">COORDENAÇÃO</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-stack-sm">Prof. Luiz Roberto Carboni Souza</h3>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-stack-lg">Professor Orientador</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Liderança acadêmica responsável pela fundamentação jurídica e metodológica deste projeto, garantindo a excelência técnica na interpretação das diretrizes de privacidade em saúde.
+                            </p>
+<div class="mt-stack-lg flex gap-stack-md">
+<span class="material-symbols-outlined text-cyan-tech/50">school</span>
+<span class="material-symbols-outlined text-cyan-tech/50">account_balance</span>
+<span class="material-symbols-outlined text-cyan-tech/50">policy</span>
+</div>
+</div>
+</div>
+<!-- Students Grid -->
+<div class="md:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Student Item Template -->
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Ana Clara</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Ana Paula</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Brenda</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Carmem</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Francisca</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Julia</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Lucas</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Marina</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl hover:border-cyan-tech/50 transition-all duration-400 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm group-hover:bg-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md group-hover:text-void-black">person</span>
+</div>
+<p class="font-body-md text-body-md text-white font-medium">Nara</p>
+<p class="font-caption text-caption text-on-surface-variant">Discente</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional Branding Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-container-max mx-auto glass-card p-stack-lg rounded-xl flex flex-col md:flex-row items-center gap-12 bg-surface-container-low/40">
+<div class="w-full md:w-1/3 flex justify-center">
+<img alt="Faculdade Galileu Logo" class="max-w-[240px] opacity-80 grayscale hover:grayscale-0 transition-all duration-700" src="../imagens lgpd/Logomarca Faculdade.png"/>
+</div>
+<div class="w-full md:w-2/3">
+<div class="mb-stack-md etched-divider md:hidden"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-center md:text-left">
+                        "Este projeto representa o compromisso da <span class="text-white font-semibold">Faculdade Galileu</span> com a ética digital e a formação de cidadãos conscientes no ecossistema da saúde brasileira, unindo ensino de excelência e prática social relevante."
+                    </p>
+<div class="mt-stack-lg flex justify-center md:justify-start gap-gutter">
+<div class="text-center">
+<p class="font-headline-md text-headline-md text-cyan-tech font-bold">2014</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">FUNDAÇÃO</p>
+</div>
+<div class="text-center">
+<p class="font-headline-md text-headline-md text-cyan-tech font-bold">LGPD</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">FOCO ESTRATÉGICO</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h2 class="footer-main-title">CARTILHA DIGITAL</h2>
+                    
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="user-circle"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">PROFESSOR ORIENTADOR</span>
+                            <p class="entry-value">Luiz Roberto Carboni Souza</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">ALUNOS</span>
+                            <p class="entry-value">Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-right">
+                    <div class="promoted-wrapper">
+                        <span class="promoted-label">PROMOVIDO POR</span>
+                        <div class="logo-container">
+                            <img src="../imagens lgpd/Logomarca Faculdade.png" alt="Faculdade Galileu" class="footer-university-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LGPD na Área da Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body></html>

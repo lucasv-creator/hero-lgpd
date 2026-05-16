@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Direitos do Paciente - LGPD SAÚDE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "cyan-tech": "#00F0FF",
+                        "tertiary-container": "#d1d9f3",
+                        "background": "#0c1324",
+                        "secondary": "#b6c7eb",
+                        "on-surface-variant": "#b9cacb",
+                        "inverse-on-surface": "#2a3043",
+                        "surface-container-high": "#23293c",
+                        "on-tertiary-container": "#575e75",
+                        "primary-fixed-dim": "#00dbe9",
+                        "inverse-primary": "#006970",
+                        "surface-variant": "#2e3447",
+                        "surface": "#0c1324",
+                        "security-blue": "#3B82F6",
+                        "primary-fixed": "#7df4ff",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-secondary": "#20304e",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-tertiary": "#283044",
+                        "on-secondary-fixed-variant": "#374765",
+                        "surface-dim": "#0c1324",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#006970",
+                        "surface-container-lowest": "#070d1f",
+                        "error-container": "#93000a",
+                        "outline": "#849495",
+                        "primary": "#dbfcff",
+                        "inverse-surface": "#dce1fb",
+                        "surface-tint": "#00dbe9",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "tertiary": "#f5f5ff",
+                        "glass-stroke": "rgba(255, 255, 255, 0.12)",
+                        "on-surface": "#dce1fb",
+                        "primary-container": "#00f0ff",
+                        "outline-variant": "#3b494b",
+                        "on-primary": "#00363a",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#33394c",
+                        "surface-container-highest": "#2e3447",
+                        "on-secondary-container": "#a8b9dd",
+                        "on-secondary-fixed": "#081b38",
+                        "on-primary-fixed": "#002022",
+                        "on-error": "#690005",
+                        "surface-container-low": "#151b2d",
+                        "void-black": "#020617",
+                        "on-primary-fixed-variant": "#004f54",
+                        "secondary-fixed-dim": "#b6c7eb",
+                        "deep-graphite": "#1E293B",
+                        "secondary-container": "#394968",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#191f31",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-background": "#dce1fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-xl": ["Outfit"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(46, 52, 71, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-void-black text-on-surface font-body-md selection:bg-cyan-tech selection:text-void-black overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <span class="material-symbols-outlined text-cyan-tech">security</span>
+            <span class="nav-label-brand">LGPD SAÚDE</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="direitos.html" class="nav-link active">Direitos</a>
+            <a href="glossario.html" class="nav-link">Glossário</a>
+            <a href="recursos.html" class="nav-link">Recursos</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="contato.html" class="nav-link">Contato</a>
+            <a href="sobre.html" class="nav-link">Sobre</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 z-[100] w-3/4 max-w-sm translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full p-6">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-headline-md text-cyan-tech font-bold uppercase tracking-widest">Menu</span>
+            <button id="close-menu-btn" class="text-cyan-tech bg-transparent border-none cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="index.html" class="mobile-nav-link">Início</a>
+            <a href="direitos.html" class="mobile-nav-link">Direitos</a>
+            <a href="glossario.html" class="mobile-nav-link">Glossário</a>
+            <a href="recursos.html" class="mobile-nav-link">Recursos</a>
+            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            <a href="contato.html" class="mobile-nav-link">Contato</a>
+            <a href="sobre.html" class="mobile-nav-link">Sobre</a>
+        </nav>
+    </div>
+</div>
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-void-black/80 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-margin-mobile py-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-40 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKdWophriwksq7z8lca1bR0TunNM_64yrrmUW_znRlfZfcvj7nLRo6lioRNrTdyK6-h7ay7skco087uNHycWw0R4U8j_7q4Nc2diwF4ckTsuv5rcjXRiBgT_U20UoPk3TcQjJ-bFSq8iwaxgwiL7ri5mtACpSTjjmMjk-rs4ddUWnanew1F1b4Oi5XJcwXU3hhi4dBo7kt1OofDnJxSNjH4GjDfLq8vp8CH-E_ABNzluge7i_MjDpXknNKRGV7xjWHLV_3IodLnTk"/>
+<div class="absolute inset-0 bg-gradient-to-b from-void-black via-transparent to-void-black"></div>
+</div>
+<div class="relative z-10 space-y-stack-md">
+<span class="font-label-caps text-label-caps text-cyan-tech tracking-[0.2em] block">PROTEÇÃO DE DADOS</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white max-w-sm mx-auto leading-tight uppercase font-extrabold tracking-tight">SEUS DIREITOS COMO PACIENTE</h1>
+<div class="w-12 h-1 bg-cyan-tech mx-auto rounded-full shadow-[0_0_10px_#00F0FF]"></div>
+</div>
+</section>
+<!-- Rights Grid Section -->
+<section class="px-margin-mobile py-stack-lg max-w-container-max mx-auto">
+<div class="grid grid-cols-1 gap-gutter">
+<!-- Right 1 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="fact_check">fact_check</span>
+<h3 class="font-headline-md text-headline-md text-white">Confirmação da existência de tratamento</h3>
+<p class="text-on-surface-variant font-body-md">Direito de saber se a instituição de saúde possui e processa seus dados pessoais.</p>
+</div>
+<!-- Right 2 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="clinical_notes">clinical_notes</span>
+<h3 class="font-headline-md text-headline-md text-white">Acesso aos dados (Prontuário)</h3>
+<p class="text-on-surface-variant font-body-md">Acesso integral ao seu prontuário médico e histórico de saúde digitalizado.</p>
+</div>
+<!-- Right 3 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="edit_note">edit_note</span>
+<h3 class="font-headline-md text-headline-md text-white">Correção de dados incompletos</h3>
+<p class="text-on-surface-variant font-body-md">Solicite a atualização imediata de informações clínicas ou cadastrais incorretas.</p>
+</div>
+<!-- Right 4 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="lock">lock</span>
+<h3 class="font-headline-md text-headline-md text-white">Anonimização e Bloqueio</h3>
+<p class="text-on-surface-variant font-body-md">Restrinja o uso de dados desnecessários ou peça a desvinculação da sua identidade.</p>
+</div>
+<!-- Right 5 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="move_down">move_down</span>
+<h3 class="font-headline-md text-headline-md text-white">Portabilidade dos dados</h3>
+<p class="text-on-surface-variant font-body-md">Transfira seu histórico clínico para outro prestador de serviço de forma estruturada.</p>
+</div>
+<!-- Right 6 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="delete_forever">delete_forever</span>
+<h3 class="font-headline-md text-headline-md text-white">Eliminação de dados pessoais</h3>
+<p class="text-on-surface-variant font-body-md">Exclusão definitiva de dados tratados sob consentimento após o fim do tratamento.</p>
+</div>
+<!-- Right 7 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="share_reviews">share_reviews</span>
+<h3 class="font-headline-md text-headline-md text-white">Informação sobre compartilhamento</h3>
+<p class="text-on-surface-variant font-body-md">Transparência sobre quais laboratórios ou convênios receberam suas informações.</p>
+</div>
+<!-- Right 8 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="help_center">help_center</span>
+<h3 class="font-headline-md text-headline-md text-white">Direito de não consentir</h3>
+<p class="text-on-surface-variant font-body-md">Ser informado sobre as consequências negativas de negar o uso de seus dados.</p>
+</div>
+<!-- Right 9 -->
+<div class="glass-effect p-stack-md rounded-xl space-y-stack-sm flex flex-col group">
+<span class="material-symbols-outlined text-cyan-tech text-3xl" data-icon="cancel">cancel</span>
+<h3 class="font-headline-md text-headline-md text-white">Revogação do consentimento</h3>
+<p class="text-on-surface-variant font-body-md">Anular a qualquer momento permissões dadas anteriormente para uso de dados.</p>
+</div>
+</div>
+</section>
+<!-- Practical Examples Section -->
+<section class="px-margin-mobile py-section-gap bg-surface-container-low/30">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<div class="text-center space-y-stack-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-cyan-tech uppercase">COMO EXERCER CADA DIREITO</h2>
+<p class="text-on-surface-variant max-w-sm mx-auto">Siga estes protocolos institucionais para garantir a proteção de sua privacidade.</p>
+</div>
+<div class="space-y-stack-md">
+<div class="flex gap-stack-md items-start">
+<div class="bg-cyan-tech/10 text-cyan-tech font-bold px-4 py-2 rounded border border-cyan-tech/30">01</div>
+<div>
+<h4 class="font-headline-md text-white">Identifique o DPO</h4>
+<p class="text-caption text-on-surface-variant">Procure pelo Encarregado de Dados (DPO) no site ou recepção da clínica.</p>
+</div>
+</div>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-glass-stroke to-transparent"></div>
+<div class="flex gap-stack-md items-start">
+<div class="bg-cyan-tech/10 text-cyan-tech font-bold px-4 py-2 rounded border border-cyan-tech/30">02</div>
+<div>
+<h4 class="font-headline-md text-white">Formalize o Pedido</h4>
+<p class="text-caption text-on-surface-variant">Envie uma solicitação por escrito ou canal oficial digital fornecido.</p>
+</div>
+</div>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-glass-stroke to-transparent"></div>
+<div class="flex gap-stack-md items-start">
+<div class="bg-cyan-tech/10 text-cyan-tech font-bold px-4 py-2 rounded border border-cyan-tech/30">03</div>
+<div>
+<h4 class="font-headline-md text-white">Aguarde o Prazo</h4>
+<p class="text-caption text-on-surface-variant">A instituição tem até 15 dias para responder a solicitações completas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h2 class="footer-main-title">CARTILHA DIGITAL</h2>
+                    
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="user-circle"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">PROFESSOR ORIENTADOR</span>
+                            <p class="entry-value">Luiz Roberto Carboni Souza</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">ALUNOS</span>
+                            <p class="entry-value">Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-right">
+                    <div class="promoted-wrapper">
+                        <span class="promoted-label">PROMOVIDO POR</span>
+                        <div class="logo-container">
+                            <img src="../imagens lgpd/Logomarca Faculdade.png" alt="Faculdade Galileu" class="footer-university-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LGPD na Área da Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script src="script.js"></script>
+</body></html>

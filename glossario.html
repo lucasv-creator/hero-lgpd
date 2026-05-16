@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Glossário Técnico | LGPD Saúde</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#d1d9f3",
+                        "surface-container": "#191f31",
+                        "primary-container": "#00f0ff",
+                        "surface-variant": "#2e3447",
+                        "inverse-surface": "#dce1fb",
+                        "on-primary": "#00363a",
+                        "on-tertiary": "#283044",
+                        "primary-fixed": "#7df4ff",
+                        "on-secondary-fixed": "#081b38",
+                        "surface-container-high": "#23293c",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#a8b9dd",
+                        "on-secondary": "#20304e",
+                        "on-primary-container": "#006970",
+                        "surface-bright": "#33394c",
+                        "surface-container-lowest": "#070d1f",
+                        "secondary-container": "#394968",
+                        "surface": "#0c1324",
+                        "on-error": "#690005",
+                        "primary": "#dbfcff",
+                        "surface-dim": "#0c1324",
+                        "surface-container-highest": "#2e3447",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-primary-fixed": "#002022",
+                        "on-tertiary-container": "#575e75",
+                        "surface-container-low": "#151b2d",
+                        "background": "#0c1324",
+                        "on-tertiary-fixed": "#131b2e",
+                        "inverse-primary": "#006970",
+                        "cyan-tech": "#00F0FF",
+                        "deep-graphite": "#1E293B",
+                        "surface-tint": "#00dbe9",
+                        "tertiary": "#f5f5ff",
+                        "primary-fixed-dim": "#00dbe9",
+                        "inverse-on-surface": "#2a3043",
+                        "on-secondary-fixed-variant": "#374765",
+                        "secondary-fixed": "#d7e2ff",
+                        "outline-variant": "#3b494b",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "secondary-fixed-dim": "#b6c7eb",
+                        "on-surface-variant": "#b9cacb",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004f54",
+                        "void-black": "#020617",
+                        "error-container": "#93000a",
+                        "glass-stroke": "rgba(255, 255, 255, 0.12)",
+                        "outline": "#849495",
+                        "on-background": "#dce1fb",
+                        "secondary": "#b6c7eb",
+                        "security-blue": "#3B82F6",
+                        "on-surface": "#dce1fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "caption": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0c1324; color: #dce1fb; -webkit-font-smoothing: antialiased; }
+        .glass-panel { background: rgba(25, 31, 49, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.12); }
+        .tech-glow { box-shadow: 0 0 20px rgba(0, 240, 255, 0.05); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.08) 0%, transparent 70%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <span class="material-symbols-outlined text-cyan-tech">security</span>
+            <span class="nav-label-brand">LGPD SAÚDE</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="direitos.html" class="nav-link">Direitos</a>
+            <a href="glossario.html" class="nav-link active">Glossário</a>
+            <a href="recursos.html" class="nav-link">Recursos</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="contato.html" class="nav-link">Contato</a>
+            <a href="sobre.html" class="nav-link">Sobre</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 z-[100] w-3/4 max-w-sm translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full p-6">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-headline-md text-cyan-tech font-bold uppercase tracking-widest">Menu</span>
+            <button id="close-menu-btn" class="text-cyan-tech bg-transparent border-none cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="index.html" class="mobile-nav-link">Início</a>
+            <a href="direitos.html" class="mobile-nav-link">Direitos</a>
+            <a href="glossario.html" class="mobile-nav-link">Glossário</a>
+            <a href="recursos.html" class="mobile-nav-link">Recursos</a>
+            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            <a href="contato.html" class="mobile-nav-link">Contato</a>
+            <a href="sobre.html" class="mobile-nav-link">Sobre</a>
+        </nav>
+    </div>
+</div>
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-void-black/80 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[353px] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop hero-gradient">
+<div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+<div class="w-full h-full border-[0.5px] border-glass-stroke [mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
+</div>
+<div class="z-10 max-w-container-max">
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl text-cyan-tech mb-stack-sm">
+                    GLOSSÁRIO TÉCNICO
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Entenda os termos fundamentais da proteção de dados na saúde através deste guia especializado em conformidade legal.
+                </p>
+</div>
+</section>
+<!-- Search Bar Section -->
+<section class="px-margin-mobile md:px-margin-desktop -mt-10 relative z-20">
+<div class="max-w-2xl mx-auto glass-panel p-stack-sm rounded-xl flex items-center gap-stack-md group focus-within:border-cyan-tech transition-colors duration-400">
+<span class="material-symbols-outlined text-on-surface-variant ml-stack-md">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder:text-on-surface-variant/50" placeholder="Filtrar termos jurídicos ou técnicos..." type="text"/>
+</div>
+</section>
+<!-- Glossary List -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Term Card: ANPD -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">ÓRGÃO FEDERAL</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">A</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">ANPD</h3>
+<p class="font-body-md text-on-surface-variant">Autoridade Nacional de Proteção de Dados - Órgão federal responsável por zelar, implementar e fiscalizar o cumprimento da LGPD no território nacional.</p>
+</article>
+<!-- Term Card: Controlador -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">TOMADOR DE DECISÃO</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">C</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Controlador</h3>
+<p class="font-body-md text-on-surface-variant">Pessoa física ou jurídica a quem competem as decisões referentes ao tratamento de dados pessoais dentro da instituição de saúde.</p>
+</article>
+<!-- Term Card: Dados Sensíveis -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">ALTO RISCO</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">D</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Dados Sensíveis</h3>
+<p class="font-body-md text-on-surface-variant">Informações sobre saúde, genética, biometria, origem racial ou convicção religiosa que exigem proteção rigorosa por lei.</p>
+</article>
+<!-- Term Card: DPO -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">CANAL DE CONTATO</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">D</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">DPO / Encarregado</h3>
+<p class="font-body-md text-on-surface-variant">Indivíduo indicado pelo controlador para atuar como canal de comunicação entre a instituição, os titulares e a ANPD.</p>
+</article>
+<!-- Term Card: Incidente -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">VULNERABILIDADE</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">I</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Incidente de Segurança</h3>
+<p class="font-body-md text-on-surface-variant">Qualquer evento adverso, como vazamento ou acesso não autorizado, que comprometa a confidencialidade ou integridade dos dados.</p>
+</article>
+<!-- Term Card: Operador -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">EXECUTOR</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">O</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Operador</h3>
+<p class="font-body-md text-on-surface-variant">Pessoa física ou jurídica que realiza o tratamento de dados pessoais em nome do controlador, seguindo suas instruções diretas.</p>
+</article>
+<!-- Term Card: Titular -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">PROPRIETÁRIO</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">T</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Titular</h3>
+<p class="font-body-md text-on-surface-variant">A pessoa natural (paciente, funcionário, parceiro) a quem se referem os dados pessoais que são objeto de tratamento.</p>
+</article>
+<!-- Term Card: Tratamento -->
+<article class="glass-panel p-stack-lg rounded-lg flex flex-col gap-stack-md hover:translate-y-[-4px] transition-transform duration-400">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-cyan-tech px-2 py-1 bg-cyan-tech/10 rounded">FLUXO DE DADOS</span>
+<span class="font-headline-md text-headline-md text-cyan-tech">T</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tratamento</h3>
+<p class="font-body-md text-on-surface-variant">Toda operação realizada com dados pessoais, abrangendo coleta, armazenamento, processamento, uso, compartilhamento e eliminação.</p>
+</article>
+<!-- Visual Element: Data Protection Graphic -->
+<div class="hidden lg:flex glass-panel rounded-lg overflow-hidden items-center justify-center relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-tech/10 to-transparent"></div>
+<img class="object-cover w-full h-full opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A highly detailed close-up of a holographic data protection interface with glowing blue circuits and shield icons. The scene is set in a dark, high-tech command center with soft cinematic lighting. The visual style reflects the institutional authority and advanced security of the LGPD Healthcare Protocol, utilizing a palette of deep blacks and vibrant cyan tech accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt95yOGN7vSmWxLxa4QWrL01JoivPM3qxtqZPPU1qI2SQeHNbMv88NF285DLqkKZ7NM9pPQVsW4PnMc5NP5CHvjZ4FLeFIx86qht6FVg0g18u2Lvk4wK5hxf42k7Z4MH-OX-uNZMRC6kHeHABDYdCNeiJtVWc3UE39Bno79l2UtwTOurMZI3yR_94C4y6PD6cxrJfRKh1CF1bigTXQNa-Ki70BnyLQFCukKylGx2ZFtjD8E0kdJw_IRrzV5sw_PIaZmdj-KA3Qtro"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-stack-lg text-center">
+<span class="material-symbols-outlined text-cyan-tech text-6xl mb-stack-md">verified_user</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Conformidade Ativa</h4>
+<p class="font-caption text-caption text-on-surface-variant">Protocolos rigorosos para segurança institucional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Compliance Banner -->
+
+</main>
+<!-- Footer -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h2 class="footer-main-title">CARTILHA DIGITAL</h2>
+                    
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="user-circle"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">PROFESSOR ORIENTADOR</span>
+                            <p class="entry-value">Luiz Roberto Carboni Souza</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-entry">
+                        <div class="entry-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="entry-content">
+                            <span class="entry-label">ALUNOS</span>
+                            <p class="entry-value">Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-right">
+                    <div class="promoted-wrapper">
+                        <span class="promoted-label">PROMOVIDO POR</span>
+                        <div class="logo-container">
+                            <img src="../imagens lgpd/Logomarca Faculdade.png" alt="Faculdade Galileu" class="footer-university-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LGPD na Área da Saúde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body></html>
