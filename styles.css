@@ -348,10 +348,9 @@ body {
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.24);
-    border-color: rgba(255, 255, 255, 0.55);
+     background: #e2e8f0;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Hero Background Animation */
