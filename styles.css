@@ -309,12 +309,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: var(--text-primary);
-    color: var(--bg-dark);
+    background: #ffffff;
+    color: #0066cc;
     text-decoration: none;
     padding: 16px 24px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
     white-space: nowrap;
     transition: all 0.3s ease;
@@ -322,7 +322,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #e2e8f0;
+    background: #f1f5f9;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
@@ -332,25 +332,23 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.16);
-    color: var(--text-primary);
+    background: #ffffff;
+    color: #0f172a;
     text-decoration: none;
     padding: 16px 24px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.95rem;
     white-space: nowrap;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255,255,255,0.15);
     transition: all 0.3s ease;
-    min-height: 52px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 14px rgba(255,255,255,0.15);
 }
 
 .btn-secondary:hover {
-     background: #e2e8f0;
+    background: #f8fafc;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.25);
 }
 
 /* Hero Background Animation */
