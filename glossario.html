@@ -185,8 +185,12 @@
 <section class="px-margin-mobile md:px-margin-desktop -mt-10 relative z-20">
 <div class="max-w-2xl mx-auto glass-panel p-stack-sm rounded-xl flex items-center gap-stack-md group focus-within:border-cyan-tech transition-colors duration-400">
 <span class="material-symbols-outlined text-on-surface-variant ml-stack-md">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder:text-on-surface-variant/50" placeholder="Filtrar termos jurídicos ou técnicos..." type="text"/>
-</div>
+<input 
+  id="glossary-search"
+  class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder:text-on-surface-variant/50"
+  placeholder="Pesquisar termo, palavra ou definição..."
+  type="text"
+/>
 </section>
 <!-- Glossary List -->
 <section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
@@ -648,4 +652,28 @@
     <script>
         lucide.createIcons();
     </script>
+    <script>
+const searchInput = document.getElementById("glossary-search");
+const glossaryCards = document.querySelectorAll(".glossary-card");
+
+if (searchInput) {
+    searchInput.addEventListener("input", function () {
+
+        const searchTerm = this.value.toLowerCase().trim();
+
+        glossaryCards.forEach(function(card) {
+
+            const cardText = card.innerText.toLowerCase();
+
+            if (cardText.includes(searchTerm)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+}
+</script>
 </body></html>
