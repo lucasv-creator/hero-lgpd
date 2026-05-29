@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção de Dados em Saúde | LGPD - Cartilha Digital</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1e40af', // Blue 800 - trustworthy
+                        'brand-light-blue': '#eff6ff', // Blue 50 - backgrounds
+                        'brand-accent': '#0ea5e9', // Sky 500 - friendly action color
+                        'brand-text': '#1f2937', // Gray 800 - high contrast text
+                        'brand-muted': '#4b5563', // Gray 600 - secondary text
+                        'brand-warning': '#dc2626', // Red 600 - alerts
+                        'brand-success': '#16a34a', // Green 600 - safe actions
+                        'brand-surface': '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'card': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Sticky Navbar Transition */
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 3px solid #0ea5e9;
+            outline-offset: 2px;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-number {
+            background: #1e40af;
+            color: white;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+        }
+        /* Custom Checkbox for Checklist */
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            border: 2px solid #cbd5e1;
+            cursor: pointer;
+            accent-color: #16a34a;
+        }
+        .checklist-item {
+            transition: all 0.2s ease;
+        }
+        .checklist-item:hover {
+            background-color: #f1f5f9;
+        }
+        /* Smooth anchor offset */
+        html {
+            scroll-padding-top: 100px; /* offset for fixed header */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-2 group">
+                    <span class="material-symbols-outlined text-brand-blue text-3xl icon-fill group-hover:text-brand-accent transition-colors">shield_person</span>
+                    <span class="font-heading font-bold text-xl tracking-tight text-brand-blue">LGPD <span class="text-brand-accent">SAÚDE</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-1 lg:space-x-4">
+                    <a href="#inicio" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">Início</a>
+                    <a href="#o-que-e" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">O que é?</a>
+                    <a href="#riscos" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">Riscos</a>
+                    <a href="#o-que-fazer" class="px-3 py-2 text-brand-warning hover:text-red-700 font-semibold transition-colors">O que fazer?</a>
+                    <a href="#como-proteger" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">Proteção</a>
+                    <a href="#faq" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">Dúvidas</a>
+                    <a href="#checklist" class="px-3 py-2 text-brand-muted hover:text-brand-blue font-medium transition-colors">Checklist</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-muted hover:text-brand-blue focus:outline-none" aria-label="Abrir menu">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-inner">
+                <a href="#inicio" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">Início</a>
+                <a href="#o-que-e" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">O que é vazamento?</a>
+                <a href="#riscos" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">Quais são os riscos?</a>
+                <a href="#o-que-fazer" class="mobile-link block px-4 py-3 text-lg font-bold text-brand-warning bg-red-50 hover:bg-red-100 rounded-lg">O que fazer imediatamente?</a>
+                <a href="#como-proteger" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">Como proteger contas</a>
+                <a href="#faq" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">Dúvidas Frequentes</a>
+                <a href="#checklist" class="mobile-link block px-4 py-3 text-lg font-medium text-brand-text hover:bg-brand-light-blue rounded-lg">Checklist de Proteção</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="inicio" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-light-blue">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-brand-warning rounded-full font-medium text-sm">
+                        <span class="material-symbols-outlined icon-fill text-lg">error</span>
+                        <span class="tracking-wide uppercase">Cartilha de Emergência e Prevenção</span>
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-6xl font-heading font-extrabold text-brand-blue leading-tight">
+                        Meus dados vazaram.<br>
+                        <span class="text-brand-accent">E agora?</span>
+                    </h1>
+                    
+                    <p class="text-xl text-brand-muted leading-relaxed max-w-2xl">
+                        Mantenha a calma. Sabemos que descobrir que seus dados de saúde ou pessoais foram expostos pode ser assustador. Esta cartilha digital foi feita para orientar você de forma simples, clara e sem termos difíceis.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#o-que-fazer" class="flex justify-center items-center gap-2 px-8 py-4 bg-brand-warning hover:bg-red-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg">
+                            <span class="material-symbols-outlined">shield_error</span>
+                            O que devo fazer agora?
+                        </a>
+                        <a href="#como-proteger" class="flex justify-center items-center gap-2 px-8 py-4 bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-light-blue font-bold rounded-xl transition-all text-lg">
+                            <span class="material-symbols-outlined">lock</span>
+                            Como me proteger?
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative hidden lg:block">
+                    <!-- Illustration Placeholder -> replaced with clear iconography / visual -->
+                    <div class="bg-white p-8 rounded-3xl shadow-card border border-gray-100 relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="absolute -top-6 -left-6 bg-yellow-100 p-4 rounded-full shadow-lg">
+                            <span class="material-symbols-outlined icon-fill text-4xl text-yellow-600">contact_support</span>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-brand-blue mb-6">Dúvidas comuns que vamos responder:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-brand-accent mt-1">check_circle</span>
+                                <span class="text-lg text-brand-text">Como saber se estou em risco?</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-brand-accent mt-1">check_circle</span>
+                                <span class="text-lg text-brand-text">Alguém pode fazer dívidas no meu nome?</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-brand-accent mt-1">check_circle</span>
+                                <span class="text-lg text-brand-text">Como o golpista usa meus dados de saúde?</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-brand-accent mt-1">check_circle</span>
+                                <span class="text-lg text-brand-text">Devo bloquear meus cartões?</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Decorative background element -->
+                    <div class="absolute inset-0 bg-brand-blue rounded-3xl transform -rotate-3 translate-x-4 translate-y-4 -z-10 opacity-10"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. O que é vazamento? -->
+        <section id="o-que-e" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-heading font-bold text-brand-blue mb-4">O que é um vazamento de dados?</h2>
+                    <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="bg-brand-light-blue p-8 rounded-2xl shadow-sm border border-blue-100 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shrink-0 shadow-md">
+                        <span class="material-symbols-outlined text-5xl text-brand-blue">data_alert</span>
+                    </div>
+                    <div>
+                        <p class="text-xl text-brand-text leading-relaxed">
+                            Vazamento de dados ocorre quando informações que deveriam ser mantidas em segredo 
+                            (como seu <strong>CPF, endereço, telefone, histórico médico, receitas ou resultados de exames</strong>) 
+                            caem nas mãos de pessoas que não deveriam ter acesso a elas, geralmente por invasões de hackers a sistemas de hospitais, clínicas ou planos de saúde.
+                        </p>
+                        <p class="mt-4 text-lg text-brand-muted">
+                            Essas informações são valiosas para golpistas, que podem usá-las para enganar você ou se passar por você.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Quais são os riscos? -->
+        <section id="riscos" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-heading font-bold text-brand-blue mb-4">Quais são os principais riscos?</h2>
+                    <p class="text-xl text-brand-muted">Entender o perigo ajuda você a se prevenir contra ataques.</p>
+                    <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full mt-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Risco 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-card hover:-translate-y-2 transition-transform duration-300 border-t-4 border-red-500">
+                        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-red-600">credit_card_off</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-3">Golpes Financeiros</h3>
+                        <p class="text-brand-muted">
+                            Uso dos seus dados para pedir empréstimos falsos, abrir contas bancárias ou fazer compras no seu nome, gerando dívidas indevidas.
+                        </p>
+                    </div>
+
+                    <!-- Risco 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-card hover:-translate-y-2 transition-transform duration-300 border-t-4 border-purple-500">
+                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-purple-600">person_off</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-3">Roubo de Identidade</h3>
+                        <p class="text-brand-muted">
+                            Alguém se passa por você utilizando seu CPF e nome completo para cometer fraudes em seu nome perante instituições ou outras pessoas.
+                        </p>
+                    </div>
+
+                    <!-- Risco 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-card hover:-translate-y-2 transition-transform duration-300 border-t-4 border-orange-500">
+                        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-orange-600">support_agent</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-3">Engenharia Social</h3>
+                        <p class="text-brand-muted">
+                            Golpistas ligam fingindo ser do hospital ou convênio. Como eles têm seus dados médicos verdadeiros, parecem muito convincentes para pedir dinheiro (ex: "taxa de emergência").
+                        </p>
+                    </div>
+
+                    <!-- Risco 4 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-card hover:-translate-y-2 transition-transform duration-300 border-t-4 border-blue-500">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-blue-600">mobile_off</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-3">Invasão de Contas</h3>
+                        <p class="text-brand-muted">
+                            Com seu e-mail e informações pessoais, criminosos podem tentar adivinhar ou recuperar senhas do seu WhatsApp, e-mail ou banco.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. O que fazer imediatamente? -->
+        <section id="o-que-fazer" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-blue text-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="inline-block py-1 px-3 rounded-full bg-red-500 text-white font-bold text-sm tracking-wider uppercase mb-4">Ação Imediata</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Recebeu a notícia do vazamento?</h2>
+                    <p class="text-xl text-blue-100">Siga este passo a passo para se proteger imediatamente.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="bg-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/20 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="step-number bg-white text-brand-blue shadow-[0_0_15px_rgba(255,255,255,0.5)]">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Desconfie de contatos urgentes</h3>
+                            <p class="text-lg text-blue-50">
+                                <strong>Nenhum hospital ou clínica vai ligar ou mandar WhatsApp pedindo pagamentos via Pix com urgência</strong>, mesmo que eles falem o nome do seu médico ou seu diagnóstico. Na dúvida, desligue e ligue você mesmo para os números oficiais.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/20 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="step-number bg-white text-brand-blue shadow-[0_0_15px_rgba(255,255,255,0.5)]">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Troque suas senhas mais importantes</h3>
+                            <p class="text-lg text-blue-50">
+                                Mude as senhas do seu e-mail principal, conta do banco e, claro, do aplicativo do plano de saúde ou hospital que sofreu o vazamento. Não use datas de nascimento ou senhas fáceis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/20 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="step-number bg-white text-brand-blue shadow-[0_0_15px_rgba(255,255,255,0.5)]">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Ative o Alerta no Serasa/SPC</h3>
+                            <p class="text-lg text-blue-50">
+                                Monitore seu CPF. Se possível, ative bloqueios ou alertas de consulta ao seu CPF em serviços como Serasa ou Boa Vista. Assim, você saberá se alguém tentar fazer um empréstimo em seu nome.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/20 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="step-number bg-white text-brand-blue shadow-[0_0_15px_rgba(255,255,255,0.5)]">4</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Guarde todas as provas</h3>
+                            <p class="text-lg text-blue-50">
+                                Salve e-mails, tire prints (foto da tela) de mensagens suspeitas e guarde o comunicado oficial da empresa sobre o vazamento. Faça também um <strong>Boletim de Ocorrência (BO)</strong> informando que seus dados foram vazados para se resguardar legalmente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Como proteger e Boas práticas -->
+        <section id="como-proteger" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-heading font-bold text-brand-blue mb-4">Boas práticas de segurança digital</h2>
+                    <p class="text-xl text-brand-muted">Como dificultar a vida dos golpistas e proteger suas contas.</p>
+                    <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full mt-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="border border-gray-200 rounded-2xl p-8 hover:shadow-card transition-shadow">
+                        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 text-brand-success">
+                            <span class="material-symbols-outlined text-4xl icon-fill">password</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mb-4">Senhas Fortes</h3>
+                        <p class="text-brand-muted text-lg">
+                            Use senhas longas. Uma frase inteira é melhor que uma palavra complexa. Exemplo: <strong>GostoDeTomarCafe#2024</strong>. Evite usar a mesma senha para vários lugares importantes.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="border border-gray-200 rounded-2xl p-8 hover:shadow-card transition-shadow">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-brand-blue">
+                            <span class="material-symbols-outlined text-4xl icon-fill">phonelink_lock</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mb-4">Verificação em Duas Etapas</h3>
+                        <p class="text-brand-muted text-lg">
+                            Ative isso no WhatsApp, e-mail e bancos. É como se fosse um "cadeado duplo". Mesmo que descubram sua senha, precisarão de um código que só chega no seu celular.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="border border-gray-200 rounded-2xl p-8 hover:shadow-card transition-shadow">
+                        <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 text-orange-600">
+                            <span class="material-symbols-outlined text-4xl icon-fill">link_off</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mb-4">Cuidado com Links</h3>
+                        <p class="text-brand-muted text-lg">
+                            Nunca clique em links enviados por SMS, WhatsApp ou e-mail falando sobre "atualização de cadastro", "problemas na conta" ou "promoções imperdíveis".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Box Como identificar golpes -->
+                <div class="mt-16 bg-yellow-50 border-2 border-yellow-200 rounded-3xl p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="shrink-0 text-yellow-600">
+                            <span class="material-symbols-outlined text-[80px] icon-fill">campaign</span>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-heading font-bold text-brand-text mb-4">A Regra de Ouro: Como identificar golpes</h3>
+                            <p class="text-xl text-brand-text mb-4">Golpistas adoram usar duas armas emocionais contra você:</p>
+                            <ul class="space-y-3 text-lg text-brand-muted">
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-brand-warning">close</span>
+                                    <strong>Sentimento de Urgência:</strong> "Pague em 10 minutos ou a cirurgia será cancelada!"
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-brand-warning">close</span>
+                                    <strong>Oportunidade boa demais:</strong> "Você tem um reembolso de R$ 5.000 liberado."
+                                </li>
+                            </ul>
+                            <div class="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-yellow-300 shadow-sm text-yellow-800 font-medium">
+                                <span class="material-symbols-outlined text-yellow-600">lightbulb</span>
+                                Pausar, respirar e checar a informação em canais oficiais evita 99% dos golpes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Checklist Rápido -->
+        <section id="checklist" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-light-blue border-y border-blue-100">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                    <div class="bg-brand-blue p-8 text-white text-center">
+                        <span class="material-symbols-outlined text-5xl mb-4 icon-fill text-brand-accent">fact_check</span>
+                        <h2 class="text-3xl font-heading font-bold">Meu Checklist de Proteção</h2>
+                        <p class="text-blue-100 mt-2">Marque as caixinhas abaixo conforme for completando as ações de segurança.</p>
+                    </div>
+                    
+                    <div class="p-8 md:p-10 space-y-4">
+                        <label class="checklist-item flex items-start gap-4 p-4 rounded-xl cursor-pointer">
+                            <input type="checkbox" class="mt-1">
+                            <div>
+                                <span class="block text-xl font-bold text-brand-text">Troquei minha senha principal</span>
+                                <span class="block text-brand-muted">Principalmente a senha do e-mail que uso para tudo.</span>
+                            </div>
+                        </label>
+                        
+                        <label class="checklist-item flex items-start gap-4 p-4 rounded-xl cursor-pointer">
+                            <input type="checkbox" class="mt-1">
+                            <div>
+                                <span class="block text-xl font-bold text-brand-text">Ativei a Verificação em 2 Etapas</span>
+                                <span class="block text-brand-muted">No WhatsApp e no meu aplicativo de banco.</span>
+                            </div>
+                        </label>
+
+                        <label class="checklist-item flex items-start gap-4 p-4 rounded-xl cursor-pointer">
+                            <input type="checkbox" class="mt-1">
+                            <div>
+                                <span class="block text-xl font-bold text-brand-text">Verifiquei meu extrato e cartão</span>
+                                <span class="block text-brand-muted">Confirmei que não há compras que não fiz.</span>
+                            </div>
+                        </label>
+
+                        <label class="checklist-item flex items-start gap-4 p-4 rounded-xl cursor-pointer">
+                            <input type="checkbox" class="mt-1">
+                            <div>
+                                <span class="block text-xl font-bold text-brand-text">Alertei minha família (Importante!)</span>
+                                <span class="block text-brand-muted">Avisei filhos ou parentes para não transferirem dinheiro se alguém pedir em meu nome no WhatsApp.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Dúvidas Frequentes (FAQ) -->
+        <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-heading font-bold text-brand-blue mb-4">Dúvidas Frequentes</h2>
+                    <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full mt-6"></div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Pergunta 1 -->
+                    <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-brand-text mb-3 flex items-start gap-3">
+                            <span class="material-symbols-outlined text-brand-accent">help</span>
+                            A instituição é culpada pelo vazamento?
+                        </h3>
+                        <p class="text-lg text-brand-muted pl-9">
+                            A empresa ou hospital tem o dever legal (pela LGPD) de proteger seus dados com segurança máxima. Se provado que houve falha ou descuido na segurança deles, podem ser responsabilizados.
+                        </p>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-brand-text mb-3 flex items-start gap-3">
+                            <span class="material-symbols-outlined text-brand-accent">help</span>
+                            Posso processar a empresa?
+                        </h3>
+                        <p class="text-lg text-brand-muted pl-9">
+                            Sim. Se comprovado o dano (como fraudes feitas no seu nome ou exposição pública de condição médica íntima), a justiça pode determinar reparação por danos morais e materiais. Consulte um advogado ou a Defensoria Pública.
+                        </p>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-brand-text mb-3 flex items-start gap-3">
+                            <span class="material-symbols-outlined text-brand-accent">help</span>
+                            Onde faço uma denúncia oficial?
+                        </h3>
+                        <p class="text-lg text-brand-muted pl-9">
+                            Além do Procon da sua cidade e do site Consumidor.gov, você pode registrar uma denúncia direto na <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong>, que é o órgão do governo que fiscaliza isso.
+                            <br><br>
+                            <a href="https://www.gov.br/anpd/pt-br" target="_blank" class="text-brand-blue font-bold hover:underline flex items-center gap-1 inline-flex">
+                                Acesse o site oficial da ANPD <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-brand-text mb-3 flex items-start gap-3">
+                            <span class="material-symbols-outlined text-brand-accent">help</span>
+                            Vazamento de prontuário médico é mais grave?
+                        </h3>
+                        <p class="text-lg text-brand-muted pl-9">
+                            Sim, muito mais grave! Informações de saúde são consideradas "Dados Sensíveis" pela lei, porque sua exposição pode causar discriminação ou constrangimento forte à pessoa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. Rodapé Institucional -->
+    <footer class="bg-brand-blue text-white py-12 px-4 sm:px-6 lg:px-8 border-t-[16px] border-brand-accent">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div>
+                <a href="#inicio" class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-white text-3xl icon-fill">security</span>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-white">LGPD SAÚDE</span>
+                </a>
+                <p class="text-blue-200 text-lg">
+                    Cartilha Digital criada para orientar cidadãos sobre a proteção de seus dados médicos e pessoais.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-heading font-bold text-xl mb-4 text-brand-accent uppercase tracking-wider">Desenvolvimento</h4>
+                <p class="text-blue-100 mb-2"><strong>Professor Orientador:</strong><br>Luiz Roberto Carboni Souza</p>
+                <p class="text-blue-100"><strong>Alunos:</strong><br>Ana Clara, Ana Paula, Brenda, Carmem, Francisca, Julia, Lucas, Marina e Nara.</p>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-bold text-xl mb-4 text-brand-accent uppercase tracking-wider">Promovido Por</h4>
+                <div class="bg-white p-4 rounded-xl inline-block">
+                    <!-- Adjust logo src if necessary -->
+                    <img src="images/Logomarca Faculdade.png" alt="Faculdade Galileu Logo" class="h-16 object-contain" onerror="this.src=''; this.alt='Logomarca Faculdade Galileu (Imagem não encontrada)'; this.className='text-brand-blue font-bold p-2'">
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-blue-800 text-center text-blue-300">
+            <p>&copy; 2024 - Projeto Integrador LGPD na Área da Saúde. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('navbar-scrolled');
+            } else {
+                header.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
