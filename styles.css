@@ -1,8 +1,8 @@
 :root {
     /* Colors - Unified Premium Palette */
-    --bg-dark: #020617;
-    --bg-navy: #0f172a;
-    --bg-surface: rgba(30, 41, 59, 0.4);
+    --bg-dark: #ffffff;
+    --bg-navy: #f8fafc;
+    --bg-surface: rgba(248, 250, 252, 0.8);
     
     --accent-cyan: #22d3ee;
     --accent-cyan-glow: rgba(34, 211, 238, 0.4);
@@ -387,7 +387,7 @@ body {
 .hero-overlay-left {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(5, 10, 25, 0.4), rgba(5, 10, 25, 0.2), rgba(5, 10, 25, 0.05)); /* Lightened considerably */
+    background: linear-gradient(to right, rgba(9, 17, 42, 0.4), rgba(5, 10, 25, 0.2), rgba(5, 10, 25, 0.05)); /* Lightened considerably */
     z-index: 2;
 }
 
